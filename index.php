@@ -27,7 +27,13 @@ $files = json_decode(file_get_contents('files/files.json'), true);
     <ul>
         <?php if ($files): ?>
             <?php foreach ($files as $file): ?>
-                <li><a href="<?= 'files/' . $file['name'] ?>" target="_blank"><?= $file['name'] ?></a></li>
+                <li>
+                    <a href="<?= 'files/' . $file['name'] ?>" target="_blank"><?= htmlspecialchars($file['name']) ?></a>
+                    <form action="delete.php" method="POST" style="display:inline;">
+                        <input type="hidden" name="filename" value="<?= htmlspecialchars($file['name']) ?>">
+                        <button type="submit" onclick="return confirm('Are you sure you want to delete this file?');">Delete</button>
+                    </form>
+                </li>
             <?php endforeach; ?>
         <?php else: ?>
             <li>No files uploaded.</li>
