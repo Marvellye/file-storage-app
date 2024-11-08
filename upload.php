@@ -11,13 +11,13 @@ if (file_exists($targetFile)) {
 }
 
 // Check file size (optional)
-if ($_FILES["file"]["size"] > 5000000) { // Limit to 5MB
+if ($_FILES["file"]["size"] > 1000000000) { // Limit to 5MB
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
 
 // Allow certain file formats
-$allowedTypes = ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'html', 'mp3', 'mp4', 'php'];
+$allowedTypes = ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'html', 'mp3', 'mp4', 'php', 'rar', 'zip'];
 if (!in_array($fileType, $allowedTypes)) {
     echo "Sorry, only JPG, JPEG, PNG, GIF, PDF, HTML, MP3, MP4 & PHP files are allowed.";
     $uploadOk = 0;
