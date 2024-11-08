@@ -1,4 +1,5 @@
 <?php
+set_time_limit(0);
 $targetDir = "files/";
 $targetFile = $targetDir . basename($_FILES["file"]["name"]);
 $uploadOk = 1;
@@ -11,7 +12,7 @@ if (file_exists($targetFile)) {
 }
 
 // Check file size (optional)
-if ($_FILES["file"]["size"] > 1000000000) { // Limit to 5MB
+if ($_FILES["file"]["size"] > 1000000000) { // Limit to 1GB
     echo "Sorry, your file is too large.";
     $uploadOk = 0;
 }
