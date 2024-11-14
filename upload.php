@@ -18,7 +18,7 @@ if ($_FILES["file"]["size"] > 1000000000) { // Limit to 1GB
 }
 
 // Allow certain file formats
-$allowedTypes = ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'html', 'mp3', 'mp4', 'php', 'rar', 'zip'];
+$allowedTypes = ['jpg', 'png', 'jpeg', 'gif', 'pdf', 'html', 'mp3', 'mp4', 'php', 'rar', 'zip', 'seb'];
 if (!in_array($fileType, $allowedTypes)) {
     echo "Sorry, only JPG, JPEG, PNG, GIF, PDF, HTML, MP3, MP4 & PHP files are allowed.";
     $uploadOk = 0;
